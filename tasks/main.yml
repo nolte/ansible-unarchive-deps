@@ -13,6 +13,6 @@
 - name: install common pkgs...
   become: '{{ unarchive_deps_privilege_escalation | default(True) }}'
   become_user: root
-  package:
+  dnf:
     name: '{{ unarchive_deps_all_pkgs + unarchive_deps_tar_pkgs + unarchive_deps_xz_pkgs }}'
     state: present
